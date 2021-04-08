@@ -221,8 +221,6 @@ while done == False:
       if round == 9:
         button3_answer = True
         round += 1    
-     
-
 
   # --- Drawing code should go here
     
@@ -266,7 +264,6 @@ while done == False:
   screen.blit(line_2, [220,90])
 
   # Button output
-
   if round == 1:
     screen.blit(line_h, [100, 500])
     screen.blit(line_ha, [100, 520])
@@ -301,7 +298,6 @@ while done == False:
     
   if round == 10:
     screen.blit(line_j, [270, 500])
-
     
   # --- Go ahead and update the screen with what we've drawn.
   pygame.display.flip()
