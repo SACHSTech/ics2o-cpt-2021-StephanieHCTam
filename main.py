@@ -117,7 +117,6 @@ rect9_y = 359
 rect9_width = 85
 rect9 = True
 
-
 button1_answer = False
 button2_answer = False
 button3_answer = False
@@ -157,36 +156,35 @@ while done == False:
           print("User pressed a mouse button")
           mouse_click_position = pygame.mouse.get_pos()
       
-
     # check if the mouse click is in the button area
     
   if button_pressed:
     #round 1
+    if (rect8_x <= mouse_click_position[0] and mouse_click_position[0] <= rect8_x + rect8_width) and (rect8_y <= mouse_click_position[1] and mouse_click_position[1] <= rect8_y + rect8_width) and button8_answer == False:
+      rect8 = not(rect8)
+      if round == 1:
+        button8_answer = True
+        round += 1    
+
+    #round 2
     if (rect_x <= mouse_click_position[0] and mouse_click_position[0] <= rect_x + rect_width) and (rect_y <= mouse_click_position[1] and mouse_click_position[1] <= rect_y + rect_width) and button1_answer == False:
       rect1 = not(rect1)
-      if round == 1:
+      if round == 2:
         button1_answer = True
         round += 1
 
-    #round 2
-    if (rect2_x <= mouse_click_position[0] and mouse_click_position[0] <= rect2_x + rect2_width) and (rect2_y <= mouse_click_position[1] and mouse_click_position[1] <= rect2_y + rect2_width) and button2_answer == False:
-      rect2 = not(rect2)
-      if round == 2:
-        button2_answer = True
-        round += 1    
-
     #round 3
-    if (rect3_x <= mouse_click_position[0] and mouse_click_position[0] <= rect3_x + rect3_width) and (rect3_y <= mouse_click_position[1] and mouse_click_position[1] <= rect3_y + rect3_width) and button3_answer == False:
-      rect3 = not(rect3)
+    if (rect4_x <= mouse_click_position[0] and mouse_click_position[0] <= rect4_x + rect4_width) and (rect4_y <= mouse_click_position[1] and mouse_click_position[1] <= rect4_y + rect4_width) and button4_answer == False:
+      rect4 = not(rect4)
       if round == 3:
-        button3_answer = True
+        button4_answer = True
         round += 1    
 
     #round 4
-    if (rect4_x <= mouse_click_position[0] and mouse_click_position[0] <= rect4_x + rect4_width) and (rect4_y <= mouse_click_position[1] and mouse_click_position[1] <= rect4_y + rect4_width) and button4_answer == False:
-      rect4 = not(rect4)
+    if (rect2_x <= mouse_click_position[0] and mouse_click_position[0] <= rect2_x + rect2_width) and (rect2_y <= mouse_click_position[1] and mouse_click_position[1] <= rect2_y + rect2_width) and button2_answer == False:
+      rect2 = not(rect2)
       if round == 4:
-        button4_answer = True
+        button2_answer = True
         round += 1    
 
     #round 5
@@ -197,32 +195,33 @@ while done == False:
         round += 1    
 
     #round 6
-    if (rect6_x <= mouse_click_position[0] and mouse_click_position[0] <= rect6_x + rect6_width) and (rect6_y <= mouse_click_position[1] and mouse_click_position[1] <= rect6_y + rect6_width) and button6_answer == False:
-      rect6 = not(rect6)
-      if round == 6:
-        button6_answer = True
-        round += 1    
-
-    #round 7
     if (rect7_x <= mouse_click_position[0] and mouse_click_position[0] <= rect7_x + rect7_width) and (rect7_y <= mouse_click_position[1] and mouse_click_position[1] <= rect7_y + rect7_width) and button7_answer == False:
       rect7 = not(rect7)
-      if round == 7:
+      if round == 6:
         button7_answer = True
         round += 1    
 
-    #round 8
-    if (rect8_x <= mouse_click_position[0] and mouse_click_position[0] <= rect8_x + rect8_width) and (rect8_y <= mouse_click_position[1] and mouse_click_position[1] <= rect8_y + rect8_width) and button8_answer == False:
-      rect8 = not(rect8)
-      if round == 8:
-        button8_answer = True
+    #round 7
+    if (rect6_x <= mouse_click_position[0] and mouse_click_position[0] <= rect6_x + rect6_width) and (rect6_y <= mouse_click_position[1] and mouse_click_position[1] <= rect6_y + rect6_width) and button6_answer == False:
+      rect6 = not(rect6)
+      if round == 7:
+        button6_answer = True
         round += 1    
-
-    #round 9
+    
+    #round 8
     if (rect9_x <= mouse_click_position[0] and mouse_click_position[0] <= rect9_x + rect9_width) and (rect9_y <= mouse_click_position[1] and mouse_click_position[1] <= rect9_y + rect9_width) and button9_answer == False:
       rect9 = not(rect9)
-      if round == 9:
+      if round == 8:
         button9_answer = True
+        round += 1   
+
+    #round 9
+    if (rect3_x <= mouse_click_position[0] and mouse_click_position[0] <= rect3_x + rect3_width) and (rect3_y <= mouse_click_position[1] and mouse_click_position[1] <= rect3_y + rect3_width) and button3_answer == False:
+      rect3 = not(rect3)
+      if round == 9:
+        button3_answer = True
         round += 1    
+     
 
 
   # --- Drawing code should go here
@@ -262,8 +261,6 @@ while done == False:
   if rect9 == True:
     pygame.draw.rect(screen, ORANGE, [rect9_x, rect9_y, rect9_width, rect9_width])
 
-
-
   # Put the image of the text on the screen
   screen.blit(line_1, [135, 40])
   screen.blit(line_2, [220,90])
@@ -271,37 +268,37 @@ while done == False:
   # Button output
 
   if round == 1:
-    screen.blit(line_a, [100, 500])
+    screen.blit(line_h, [100, 500])
+    screen.blit(line_ha, [100, 520])
 
   if round == 2:
-    screen.blit(line_b, [100, 500])
-    screen.blit(line_ba, [100, 520])
+    screen.blit(line_a, [100, 500])
 
   if round == 3:
-    screen.blit(line_c, [100, 500])
+    screen.blit(line_d, [100, 500])
 
   if round == 4:
-    screen.blit(line_d, [100, 500])
+    screen.blit(line_b, [100, 500])
+    screen.blit(line_ba, [100, 520])
 
   if round == 5:
     screen.blit(line_e, [100, 500])
     screen.blit(line_ea, [100, 520])
 
   if round == 6:
-    screen.blit(line_f, [100, 500])
-
-  if round == 7:
     screen.blit(line_g, [100, 500])
     screen.blit(line_ga, [100, 520])
 
+  if round == 7:
+    screen.blit(line_f, [100, 500])
+    
   if round == 8:
-    screen.blit(line_h, [100, 500])
-    screen.blit(line_ha, [100, 520])
-
-  if round == 9:
     screen.blit(line_i, [100, 500])
     screen.blit(line_ia, [100, 520])
 
+  if round == 9:
+    screen.blit(line_c, [100, 500])
+    
   if round == 10:
     screen.blit(line_j, [270, 500])
 
