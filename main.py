@@ -1,7 +1,7 @@
 """ 
 -------------------------------------------------------------------------
 Name:   main.py
-Purpose:  Produce a python program demonstrating your understanding of a variety of topics in the course.
+Purpose:  Produce a python program demonstrating my understanding of a variety of topics in the course.
 
 Author: Tam.S
 
@@ -37,6 +37,7 @@ background_image = pygame.transform.scale(background_image,(750,580))
 background_position = [0, 0]
 
 # Load text
+# Captions
 title_font = pygame.font.SysFont('Arial', 30, True, False)
 text_font = pygame.font.SysFont('Arial', 16, True, False)
 header_font = pygame.font.SysFont('Arial', 20, True, False)
@@ -45,7 +46,7 @@ line_1 = title_font.render("Find the Computer Components!", True, YELLOW)
 
 line_2 = header_font.render("Is your MEMORY good enough?", True, BLUE)
 
-
+# Text descriptions for components
 line_a = text_font.render("A GRAPHICS CARD, GPU, renders an image to a display device.", True, WHITE)
 
 line_b = text_font.render("The MOTHERBOARD serves as a single platform that connects all the", True, WHITE)
@@ -117,6 +118,7 @@ rect9_y = 359
 rect9_width = 85
 rect9 = True
 
+# Set booleans
 button1_answer = False
 button2_answer = False
 button3_answer = False
@@ -127,6 +129,7 @@ button7_answer = False
 button8_answer = False
 button9_answer = False
 
+# Define initial round
 round = 1
 
 mouse_click_position = [0,0]
@@ -137,13 +140,7 @@ done = False
 # Used to manage how fast the screen updates
 clock = pygame.time.Clock()
  
-# -------- Main Program Loop -----------
-#while not done:
-    # --- Main event loop
-    #for event in pygame.event.get(): # User did something
-        #if event.type == pygame.QUIT: # If user clicked close
-            #done = True # Flag that we are done so we exit this loop
-  
+# -------- Main Program Loop -----------  
     # --- Game logic should go here
 while done == False:
   button_pressed = False
@@ -158,6 +155,8 @@ while done == False:
       
     # check if the mouse click is in the button area
     
+  # Set 'if statement' conditions for button1_answer
+
   if button_pressed:
     #round 1
     if (rect8_x <= mouse_click_position[0] and mouse_click_position[0] <= rect8_x + rect8_width) and (rect8_y <= mouse_click_position[1] and mouse_click_position[1] <= rect8_y + rect8_width) and button8_answer == False:
@@ -263,7 +262,7 @@ while done == False:
   screen.blit(line_1, [135, 40])
   screen.blit(line_2, [220,90])
 
-  # Button output
+  # Button output with text
   if round == 1:
     screen.blit(line_h, [100, 500])
     screen.blit(line_ha, [100, 520])
